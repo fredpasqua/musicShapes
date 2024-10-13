@@ -18,7 +18,9 @@ const names = [
   'x', 'o'
 ]
 const [size, setSize] = useState(30);
-useEffect(() => {setMatch(getRandomColor(match.color, colors, names))}, [])
+useEffect(() => {
+  setMatch(getRandomColor(match.color, colors, names));
+}, []);
 
   return (
     <div className='screen'>
