@@ -30,10 +30,12 @@ function App() {
         </button>
         <br></br>
         <h4>All 6 cards must fit within the red line</h4>
-        <Countdown date={Date.now() + 30000} className="timer" />
+        <Countdown date={Date.now() + 45000} className="timer" />
       </div>
-
-      <Gameboard className={"board"}></Gameboard>
+      <div>
+        {" "}
+        <Gameboard className={"board"}></Gameboard>
+      </div>
     </div>
   );
 }
