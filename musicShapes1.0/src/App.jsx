@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 import Gameboard from "./GameBoard.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
@@ -9,23 +9,19 @@ function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   const [showModal, setShowModal] = useState(true);
+  const [start, setStart] = useState(Date.now() + 5000);
 
   useEffect(() => {
     setMatch(getRandomColor(match.color, colors, names));
-  }, [showModal]);
+  }, []);
+
   const closeModal = () => {
     setShowModal(false);
   };
+
   return (
     <>
       <div className="screen">
-        {showModal ? (
-          <div className="loser">
-            {" "}
-            <p>Sorry, try again!</p>
-            <button onClick={() => closeModal()}>button</button>
-          </div>
-        ) : null}
         <div className="gameHeader">
           {" "}
           <h4>Set the letter and color of each card to</h4>
@@ -42,7 +38,20 @@ function App() {
           </button>
           <br></br>
           <h4>All 6 cards must fit within the red line</h4>
-          <Countdown date={Date.now() + 45000} className="timer" />
+          <Countdown
+            autoStart={true}
+            date={start}
+            key={start}
+            className="timer"
+          >
+            {showModal ? (
+              <div className="loser">
+                <p>Sorry, try again!</p>
+                <button onClick={() => closeModal()}>close</button>
+              </div>
+            ) : null}
+          </Countdown>
+          <button onClick={() => setStart(Date.now() + 5000)}>START</button>
         </div>
         <div>
           {" "}
@@ -53,4 +62,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
