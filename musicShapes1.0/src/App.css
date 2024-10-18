@@ -43,12 +43,14 @@ button {
 }
 
 .screen {
+  z-index: 1;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: 100vh;
   width: 100vw;
   justify-items: center !important;
+  
 }
 .timer {
   font-size: 60px;
@@ -73,4 +75,20 @@ button {
     height: 400px;
     min-width: 25vw;
     padding: 10px;
+}
+
+.loser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20vh;
+  bottom: auto;
+  left: 25vw;
+  right: 25vw;
+  width: 50vw;
+  height: 50%;
+  z-index: 100;
+  background-color: rgba(102, 29, 29, 0.5);
+
 }
