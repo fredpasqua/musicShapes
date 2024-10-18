@@ -9,7 +9,7 @@ function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   useEffect(() => {
-    setMatch(getRandomColor(match.color, colors, names));
+    setMatch(getRandomColor(match.color, colors, names));   
   }, []);
 
   return (
