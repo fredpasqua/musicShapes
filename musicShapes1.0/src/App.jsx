@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, forceUpdate } from "react";
 import Gameboard from "./GameBoard.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
@@ -9,18 +9,19 @@ function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   const [showModal, setShowModal] = useState(true);
-  const [start, setStart] = useState(Date.now() + 45000);
+  const [start, setStart] = useState(Date.now() + 3000);
 
   useEffect(() => {
     setMatch(getRandomColor(match.color, colors, names));
-  }, [match.color]);
+  }, []);
 
   const closeModal = () => {
     setShowModal(false);
   };
   const restart = () => {
     setMatch(getRandomColor(match.color, colors, names));
-    setStart(Date.now() + 45000);
+
+    setStart(Date.now() + 3000);
 
     setShowModal(true);
   };

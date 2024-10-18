@@ -14,9 +14,7 @@ function Gameboard() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   const [size, setSize] = useState(30);
-  useEffect(() => {
-    setMatch(getRandomColor(match.color, colors, names));
-  }, []);
+
 
   return (
     <div className="gameContainer">
