@@ -38,12 +38,7 @@ function App() {
           </button>
           <br></br>
           <h4>All 6 cards must fit within the red line</h4>
-          <Countdown
-            autoStart={true}
-            date={start}
-            key={start}
-            className="timer"
-          >
+          <Countdown date={start} key={start} className="timer">
             {showModal ? (
               <div className="loser">
                 <p>Sorry, try again!</p>
