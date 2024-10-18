@@ -9,14 +9,20 @@ function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   const [showModal, setShowModal] = useState(true);
-  const [start, setStart] = useState(Date.now() + 5000);
+  const [start, setStart] = useState(Date.now() + 45000);
 
   useEffect(() => {
     setMatch(getRandomColor(match.color, colors, names));
-  }, []);
+  }, [match.color]);
 
   const closeModal = () => {
     setShowModal(false);
+  };
+  const restart = () => {
+    setMatch(getRandomColor(match.color, colors, names));
+    setStart(Date.now() + 45000);
+
+    setShowModal(true);
   };
 
   return (
@@ -46,7 +52,7 @@ function App() {
               </div>
             ) : null}
           </Countdown>
-          <button onClick={() => setStart(Date.now() + 5000)}>START</button>
+          <button onClick={() => restart()}>START</button>
         </div>
         <div>
           {" "}
