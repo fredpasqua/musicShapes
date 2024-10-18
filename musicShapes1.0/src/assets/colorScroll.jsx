@@ -1,7 +1,3 @@
-import React from "react";
-
-
-
 function getRandomColor(hexColor, colorArray, names) {
   // Check if the input color has changed
   if (hexColor) {
