@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Gameboard from "./GameBoard.jsx";
 import Gameboard2 from "./Gameboard2.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
