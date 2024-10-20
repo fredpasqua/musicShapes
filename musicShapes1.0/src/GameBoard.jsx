@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
-import Countdown from "react-countdown";
 
 function Gameboard() {
   const [color1, setColor1] = useState({ color: "#FF5733", name: "1" });
@@ -10,11 +9,10 @@ function Gameboard() {
   const [color4, setColor4] = useState({ color: "#FF5733", name: "4" });
   const [color5, setColor5] = useState({ color: "#FF5733", name: "5" });
   const [color6, setColor6] = useState({ color: "#FF5733", name: "6" });
-  const [match, setMatch] = useState({ color: "#FF5733", name: "x" });
+
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   const [size, setSize] = useState(30);
-
 
   return (
     <div className="gameContainer">

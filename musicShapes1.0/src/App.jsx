@@ -1,4 +1,4 @@
-import { useState, useEffect, forceUpdate } from "react";
+import { useState, useEffect } from "react";
 import Gameboard from "./GameBoard.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
