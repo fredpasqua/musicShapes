@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Gameboard2 from "./Gameboard2.jsx";
+import Gameboard2 from "./GameBoard2.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
 import Countdown from "react-countdown";
@@ -9,7 +9,7 @@ function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
   const [showModal, setShowModal] = useState(true);
-  const [start, setStart] = useState(Date.now() + 3000);
+  const [start, setStart] = useState(Date.now() + 45000);
 
   useEffect(() => {
     setMatch(getRandomColor(match.color, colors, names));
@@ -20,11 +20,20 @@ function App() {
   };
   const restart = () => {
     setMatch(getRandomColor(match.color, colors, names));
+    console.log(match);
 
-    setStart(Date.now() + 3000);
+    setStart(Date.now() + 2000);
 
     setShowModal(true);
   };
+  //winner configuration will be determined if all the squares match this configuraion)
+
+  // const winnerConfig = {
+  //   color: match.color,
+  //   name: match.name,
+  // };
+
+  // if (winnerConfig === state of all )
 
   return (
     <>
