@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Gameboard from "./GameBoard.jsx";
+import Gameboard2 from "./Gameboard2.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
 import Countdown from "react-countdown";
@@ -55,10 +56,8 @@ function App() {
           </Countdown>
           <button onClick={() => restart()}>START</button>
         </div>
-        <div>
-          {" "}
-          <Gameboard className={"board"}></Gameboard>
-        </div>
+        <div> {/* <Gameboard className={"board"}></Gameboard> */}</div>
+        <div>{<Gameboard2 className={"board"}></Gameboard2>}</div>
       </div>
     </>
   );
