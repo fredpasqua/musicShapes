@@ -5,15 +5,13 @@ import "./App.css";
 import Countdown from "react-countdown";
 import { gameTotalContext } from "./Contexts/gameTotalContext.js";
 function App() {
-  const [match, setMatch] = useState({ color: "#FF5733", name: "x" });
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
+  const [match, setMatch] = useState(getRandomColor("#FF5733", colors, names));
   const [showModal, setShowModal] = useState(true);
   const [start, setStart] = useState(Date.now() + 45000);
-  const [showWin, setShowWin] = useState(true);
-  useEffect(() => {
-    setMatch(getRandomColor(match.color, colors, names));
-  }, []);
+  const [showWin, setShowWin] = useState(false);
+  //todo import gameTotalContext and create logic to store state of cards and when cards
 
   const closeModal = () => {
     setShowModal(false);
@@ -43,7 +41,7 @@ function App() {
       <p>YOU WON!</p>
       <button onClick={() => closeWin()}>X</button>
     </div>
-  ) : (
+  ) : match ? (
     <>
       <div className="screen">
         <div className="gameHeader">
@@ -76,6 +74,8 @@ function App() {
         <div>{<Gameboard2 className={"board"}></Gameboard2>}</div>
       </div>
     </>
+  ) : (
+    <h1>Loading...</h1>
   );
 }
 
