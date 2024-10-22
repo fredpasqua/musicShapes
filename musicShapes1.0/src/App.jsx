@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Gameboard2 from "./GameBoard2.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
 import Countdown from "react-countdown";
-import { gameTotalContext } from "./Contexts/gameTotalContext.js";
+// import { gameTotalContext } from "./Contexts/gameTotalContext.js";
 function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
@@ -12,7 +12,7 @@ function App() {
   const [start, setStart] = useState(Date.now() + 45000);
   const [showWin, setShowWin] = useState(false);
   //todo import gameTotalContext and create logic to store state of cards and when cards
-  const [gamePlayStatus, setGamePlayStatus] = useState({ gameTotalContext });
+  // const [gamePlayStatus, setGamePlayStatus] = useState({ gameTotalContext });
   const closeModal = () => {
     setShowModal(false);
   };
@@ -71,11 +71,11 @@ function App() {
           <button onClick={() => restart()}>START</button>
         </div>
         <div> {/* <Gameboard className={"board"}></Gameboard> */}</div>
-        <gameTotalContext.Provider
+        {/* <gameTotalContext.Provider
           value={{ gamePlayStatus, setGamePlayStatus }}
-        >
-          <div>{<Gameboard2 className={"board"}></Gameboard2>}</div>
-        </gameTotalContext.Provider>
+        > */}
+        <div>{<Gameboard2 className={"board"}></Gameboard2>}</div>
+        {/* </gameTotalContext.Provider> */}
       </div>
     </>
   ) : (

@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
 
-const GameContext = createContext();
+const GameContext = createContext({});
 
 
