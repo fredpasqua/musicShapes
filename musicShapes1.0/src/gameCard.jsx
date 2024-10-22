@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { gameTotalContext } from "./Contexts/gameTotalContext.js";
 import getRandomColor from "./assets/colorScroll.jsx";
 
 export default function GameCard() {
