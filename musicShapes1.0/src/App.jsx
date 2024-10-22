@@ -3,7 +3,7 @@ import Gameboard2 from "./GameBoard2.jsx";
 import getRandomColor from "./assets/colorScroll.jsx";
 import "./App.css";
 import Countdown from "react-countdown";
-import { gameTotalContext } from "./Contexts/gameTotalContext.js";
+//import { gameTotalContext } from "./Contexts/gameTotalContext.js";
 function App() {
   const colors = ["#FF5733", "#33FF57", "#883982"];
   const names = ["x", "o"];
