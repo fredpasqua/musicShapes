@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import getRandomColor from "./assets/colorScroll.jsx";
-
+import { gameTotalContext } from "./Contexts/gameTotalContext.js";
 export default function GameCard() {
   const [color, setColor] = useState({
     color: "#FF5733",
     name: "o",
     fontsizer: "20px",
   });
+  const [gamePlayStatus, setGamePlayStatus] = useContext({ gameTotalContext });
 
   return (
     <button
@@ -17,7 +18,11 @@ export default function GameCard() {
         width: "200px",
         fontSize: color.fontsizer,
       }}
-      onClick={() => setColor(getRandomColor(color.color))}
+      onClick={() => {
+        setColor(getRandomColor(color.color));
+        setGamePlayStatus((prevArray) => [...prevArray, color]);
+        console.log(gameTotalContext);
+      }}
     >
       {color.name}
     </button>
